@@ -40,6 +40,18 @@ const findSum = function(array) {
   
   const largestPair = function(array) {
     // your code here - don't forget to return a number!
+    //create new array
+    const products = [];
+    //loop through input array and multiply adjacent numbers
+    //update new array with these products
+    for (i=1; i < array.length; i++) {
+        let prod = array[i] * array[i-1];
+        products.push(prod);
+    }
+    //sort new array in descending order
+    products.sort(function(a, b){return b-a});
+    //return the first term (max value)
+    return products[0];
   };
   
   const removeParenth = function(str) {

@@ -44,6 +44,16 @@ const findSum = function(array) {
   
   const removeParenth = function(str) {
     // your code here - don't forget to return a string!
+    //split string by open parentheses and get array
+    let firstArray = str.split("(");
+    //get first index of array
+    let firstHalf = firstArray[0];
+    //split string by closed parentheses and get array
+    let secondArray = str.split(")");
+    //get second index of array
+    let secondHalf = secondArray[1];
+    //add both strings and return string
+    return firstHalf + secondHalf;
   };
   
   const scoreScrabble = function(str) {

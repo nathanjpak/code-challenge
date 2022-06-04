@@ -58,4 +58,29 @@ const findSum = function(array) {
   
   const scoreScrabble = function(str) {
     // your code here - don't forget to return a number!
+    //set string to lowercase because we are not told to assume that it is
+    str = str.toLowerCase();
+    //create arrays for each point values
+    const one = ["a", "e", "i", "o", "u", "l", "n", "r", "s", "t"];
+    const two = ["d", "g"];
+    const three = ["b", "c", "m", "p"];
+    const four = ["f", "h", "v", "w", "y"];
+    const five = ["k"];
+    const eight = ["j", "x"];
+    const ten = ["q", "z"];
+    //create score variable
+    let score = 0;
+    //loop through characters in string to see if it is in each array
+    //if it is in the array, update score accordingly
+    for (i=0; i < str.length; i++) {
+        let char = str.charAt(i);
+        (one.includes(char)) ? score = score + 1 : score = score;
+        (two.includes(char)) ? score = score + 2 : score = score;
+        (three.includes(char)) ? score = score + 3 : score = score;
+        (four.includes(char)) ? score = score + 4 : score = score;
+        (five.includes(char)) ? score = score + 5 : score = score;
+        (eight.includes(char)) ? score = score + 8 : score = score;
+        (ten.includes(char)) ? score = score + 10 : score = score;
+    }
+    return score;
   };

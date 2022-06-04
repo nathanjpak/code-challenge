@@ -10,6 +10,25 @@ const findSum = function(array) {
   
   const findFrequency = function(array) {
     // your code here - don't forget to return an object!
+    //create empty object to contain counts
+    const counts = {};
+    //loop through input array and update object
+    for (const element of array) {
+        (counts[element]) ? counts[element]++ : counts[element]=1;
+    }
+    //convert object to array
+    let sortable = [];
+    for (const element in counts) {
+        sortable.push([element, counts[element]]);
+    }
+    //sort new array in descending order
+    sortable.sort(function(a,b){return b[1]-a[1]});
+    //find first element and last element
+    let first = sortable[0];
+    let last = sortable[sortable.length-1];
+    //create object with first element and last element
+    const results = { most : first[0], least : last[0]};
+    return results
   };
   
   const isPalindrome = function(str) {
